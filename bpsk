@@ -1,0 +1,60 @@
+import matplotlib.pyplot as plt
+import math
+
+n = int(input("No. of bits : "))
+list1 = []
+i = 0
+while(i < n):
+    m = int(input())
+    list1.append(m)
+    i = i + 1
+print(list1)
+
+i = 0
+t = 0
+list2 = []
+list3 = []
+while(i < n):
+        if(list1[i] == 0):
+            j = 0
+            k = 0
+            while(j < 1000):
+                j = j + 1
+                t = t + 0.001
+                k = math.sin(2*3.14*2*t)
+                list2.append(k)
+                list3.append(t)
+                t = t + 0.001
+        else:
+            j = 0
+            k = 0
+            while(j < 1000):
+                j = j + 1
+                t = t + 0.001
+                k = - math.sin((2*3.14*2*t))
+                list2.append(k)
+                list3.append(t)
+                t = t + 0.001
+        i = i + 1
+            
+plt.plot(list3, list2)
+
+
+plt.show()
+
+i = 0
+j = 5
+list4 = []
+while(i < n):
+    i = i + 1
+    if(list2[j] > 0):
+        list4.append(0)
+    else:
+        list4.append(1)
+    j = j + 1000
+
+print(list4)
+
+
+    
+
